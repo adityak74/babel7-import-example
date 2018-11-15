@@ -1,5 +1,8 @@
-module.exports = function (api) {
+module.exports = function (api, options, dirname) {
+		api.caller(caller => { console.log(caller); });
 		api.cache(false);
+		// console.log('api-', api);
+
 		const presets =  [
 			[
 				"@babel/preset-env",
@@ -26,6 +29,7 @@ module.exports = function (api) {
 			'@babel/plugin-proposal-export-namespace-from',
 			'@babel/plugin-proposal-class-properties',
 			'@babel/plugin-syntax-dynamic-import',
+			"@babel/plugin-transform-runtime",
 			'@babel/plugin-syntax-import-meta'
 		];
 		return {
@@ -34,6 +38,13 @@ module.exports = function (api) {
 				'../external',
 			],
 			presets,
-			plugins
+			plugins,
+			overrides: [
+				{
+					test: '../external',
+					extends: '../external/.babelrc',
+					sourceType: 'module'
+				}
+			],
 		}
 }
