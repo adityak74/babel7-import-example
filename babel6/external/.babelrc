@@ -1,0 +1,24 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": [
+						"edge >= 13",
+						"safari >= 10",
+						"chrome >= 55",
+						"firefox >= 48"
+					],
+					"node": "current"
+				}
+			}
+		],
+		"react"
+	],
+	"plugins": [
+		"transform-class-properties",
+		"transform-object-rest-spread",
+		"transform-runtime"
+	]
+}
