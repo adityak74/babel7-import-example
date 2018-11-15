@@ -1,7 +1,5 @@
 module.exports = function (api, options, dirname) {
-		api.caller(caller => { console.log(caller); });
 		api.cache(false);
-		// console.log('api-', api);
 
 		const presets =  [
 			[
@@ -33,18 +31,7 @@ module.exports = function (api, options, dirname) {
 			'@babel/plugin-syntax-import-meta'
 		];
 		return {
-			babelrcRoots: [
-				'.',
-				'../external',
-			],
 			presets,
 			plugins,
-			overrides: [
-				{
-					test: '../external',
-					extends: '../external/.babelrc',
-					sourceType: 'module'
-				}
-			],
 		}
 }
