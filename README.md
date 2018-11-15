@@ -10,4 +10,4 @@ Node version: `8.11.2` (lts)
 
 ## Fix
 
-When compiling your script in `main/` include `--ignore='node_modules'` that will make sure that packages other than node_modules are transpiled. 
+When compiling your script in `main/` include `--ignore='node_modules'` that will make sure that packages other than node_modules are transpiled. Check this: https://github.com/adityak74/babel7-import-example/blob/master/babel7/main/package.json#L8
