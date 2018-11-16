@@ -1,4 +1,4 @@
-module.exports = function (api, options, dirname) {
+module.exports = function (api) {
 		api.cache(false);
 
 		const presets =  [
@@ -6,6 +6,7 @@ module.exports = function (api, options, dirname) {
 				"@babel/preset-env",
 				{
 					loose: true,
+					modules: 'commonjs',
 					targets: {
 						node: "current"
 					},
@@ -17,7 +18,7 @@ module.exports = function (api, options, dirname) {
 			[
 				'module-resolver', {
 					alias: {
-						External: '../external'
+						External: './external'
 					}
 				}
 			],
